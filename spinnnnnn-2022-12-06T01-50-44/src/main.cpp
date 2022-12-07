@@ -106,6 +106,7 @@ int main() {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
   int num = 1;
+  int num2 = 1;
   int f = 0;
   int speed=80;
   int intak = 0;
@@ -136,6 +137,26 @@ while(true) {
 
   }
 
+
+
+  if(Controller1.ButtonR1.pressing()) {
+    while(Controller1.ButtonR1.pressing()) {
+      wait(10,msec);
+    }
+
+  num2 = num2+1;
+  if (num2 >1) {
+    num2 = 0;
+  }
+
+  numatics2 = num2;
+  
+  
+
+
+  }
+
+
   if(Controller1.ButtonL1.pressing()) {
     while(Controller1.ButtonL1.pressing()) {
       wait(10,msec);
@@ -160,14 +181,14 @@ while(true) {
 
   }
 
-  if(Controller1.ButtonUp.pressing()) {
+  if(Controller1.ButtonUp.pressing()&& speed <101) {
     while(Controller1.ButtonUp.pressing()){
       wait(10,msec);
     }
     speed = speed + 10;
     
   }
-  if(Controller1.ButtonDown.pressing()) {
+  if(Controller1.ButtonDown.pressing() && speed >0) {
     while(Controller1.ButtonDown.pressing()){
       wait(10,msec);
     }
@@ -176,17 +197,20 @@ while(true) {
   }
 
 
+  int act = speed - (fly1.velocity(pct) + fly2.velocity(pct))/2;
 
 
+  if (f == 0) {
   fly1.stop();
-  fly2.stop();
+  fly2.stop();}
   if (f==1) {
-    fly1.spin(forward, speed, pct);
-    fly2.spin(forward, speed, pct);
+    fly1.spin(forward, speed+act*.1, pct);
+    fly2.spin(forward, speed+act*.1, pct);
   }
+  if (intak ==0) {
   i.stop();
-  side.stop();
-  if (f==1) {
+  side.stop();}
+  if (intak==1) {
     i.spin(forward, 100, pct);
     side.spin(forward, 100, pct);
   }
