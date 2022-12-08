@@ -18,6 +18,7 @@ extern motor bl;
 extern motor br;
 extern inertial inert;
 extern rotation xrot;
+extern rotation yrot;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.

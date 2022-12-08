@@ -21,9 +21,9 @@ motor fl = motor(PORT1, ratio18_1, false);
 motor fr = motor(PORT10, ratio18_1, true);
 motor bl = motor(PORT11, ratio18_1, false);
 motor br = motor(PORT20, ratio18_1, true);
-inertial inert = inertial(PORT7);
-rotation xrot = rotation(PORT5, false);
-
+inertial inert = inertial(PORT12);
+rotation xrot = rotation(PORT19, false);
+rotation yrot = rotation(PORT15, false);
 // VEXcode generated functions
 
 

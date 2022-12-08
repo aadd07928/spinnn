@@ -43,8 +43,10 @@ using namespace vex;
 
 
 //   return 0;
-// }
+// 
+#include "okapi.cpp"
 
+drivebase drive();
 
 void driveforward(int deg) {
   xrot.resetPosition();
@@ -101,10 +103,16 @@ void tr(int deg) {
   br.stop();
 }
 
+void ttg() {
+
+}
+
 
 int main() {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
+  drivebase fd;
+  fd.d();
   int num = 1;
   int num2 = 1;
   int f = 0;
